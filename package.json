@@ -1,0 +1,12 @@
+{
+  "name": "cmm221",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ak-mai/cmm221.git",
+  "author": "ak-mai <32544196+ak-mai@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.1",
+    "twig": "^1.10.5"
+  }
+}

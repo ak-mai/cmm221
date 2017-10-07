@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en"> <!-- main language in your web -->
-<head>
-	<meta charset="UTF-8"> <!-- Tell to read Thai -->
-	<title>CMM 19</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css"> <!-- Load CSS from BULMA good for mobile first no javaS. -->
-	<link rel="stylesheet" type="text/css" href="/assets/home.css">
+{% extends 'layout/base.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/home.css">
+{% endblock %}
 
 
-</head>
-<body>
-	<header>
+{% block content %}
+
+	<!--<header>
 		<div class="has-text-centered">
 			<img src="/assets/images/logo.png" alt="" width="145" height="auto">
 		</div>
@@ -24,41 +22,25 @@
 			<a href="#" class="navbar-item">MAGAZINE</a>
 			
 		</nav>
-	</header>
+	</header>-->
 
 	<main>
 		<section class="banner">
 			<div class="highlight">
 				<div class = "columns">
-					<div class="column highlight-item">
-						<h1>HELLO</h1> <!--MUSt have only ONE H1-->
+					<div class="column highlight-item" style="background-image: url({{highlight.url}});">
+						<h1>{{ highlight.title }}</h1> <!--MUSt have only ONE H1-->
 						<!--<img src="/assets/images/home/banner/highlight.jpg" alt="" width="100%" height="auto">-->
 					</div>
 				</div>
 			</div>
 			<div class="thumbnail">
 				<div class="columns is-marginless">
-					<div class="column thumbnail-item is-paddingless"
-					style="background-image: url(/assets/images/home/banner/thumbnail-1.jpg);" >
-					Food
-						<!--<img src="/assets/images/home/banner/thumbnail-1.jpg" alt="" width="100%" height="auto">-->
-					</div>
-					<div class="column thumbnail-item is-paddingless"
-					style="background-image: url(/assets/images/home/banner/thumbnail-2.jpg);" >
-					Work
-					</div>
-					<div class="column thumbnail-item is-paddingless"
-					style="background-image: url(/assets/images/home/banner/thumbnail-3.jpg);" >
-					Drink
-					</div>
-					<div class="column thumbnail-item is-paddingless"
-					style="background-image: url(/assets/images/home/banner/thumbnail-4.jpg);" >
-					Sport
-					</div>
-					<div class="column thumbnail-item is-paddingless"
-					style="background-image: url(/assets/images/home/banner/thumbnail-5.jpg);" >
-					Walk
-					</div>
+					{% for item in thumbnail %}
+						<div class="column thumbnail-item is-paddingless" style="background-image: url({{item.url}});">
+						{{ item.title }}
+						</div>
+					{% endfor %}
 				</div>
 			</div>
 		</section>
@@ -228,6 +210,4 @@
 
 
 	<h1 class="has-text-centered">สวัสดีจ้า</h1>
-
-</body>
-</html>
+{% endblock %}

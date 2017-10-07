@@ -1,5 +1,9 @@
 exports.index = function(req, res){/*require respond*/
-	let content ={
+	res.render('news.twig')	
+}
+
+/*
+let content ={
 		banner:[
 			{
 				id: 1,
@@ -8,11 +12,10 @@ exports.index = function(req, res){/*require respond*/
 			},
 			{
 				id: 2,
-				url: '/image/img-2.jpg/',/*Not foeget comma*/
+				url: '/image/img-2.jpg/',/*Not foeget comma
 				title: 'news 2'
 			}
 		]
-	}
-
 	res.json(content)
-}
+
+	}*/
